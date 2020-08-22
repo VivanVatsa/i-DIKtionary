@@ -4,12 +4,19 @@ data = json.load(open("data.json"))
 
 
 def dict_translate(w):
-    return data[w]
+    # check = w
+    w = w.lower()
+    if w in data:
+        # if(not check.upper() or not check.lower()):
+        return data[w]
+    else:
+        return "Word is Invalid. Double check and try again..."
 
 
 user_input = input("enter the word: ")
 
 print(dict_translate(user_input))
+
 
 #
 # PowerShell 7.0.3
