@@ -3,7 +3,6 @@
 An Interactive Dictionary.
 -----------------
 Vivan Designed it using PYthon and it's CLI.
-https://github.com/VivanVatsa/i-DIKtionary/blob/master/assets/entertheword.png
 -----------
 Wanna nod on ideas ? ping along down here ->
 ------------
