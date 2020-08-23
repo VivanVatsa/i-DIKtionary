@@ -1,4 +1,6 @@
 import json
+import difflib
+from difflib import get_close_matches
 
 data = json.load(open("data.json"))
 
@@ -9,13 +11,27 @@ def dict_translate(w):
     if w in data:
         # if(not check.upper() or not check.lower()):
         return data[w]
+    elif len(get_close_matches(w, data.keys())) > 0:
+        yn = input("Did you mean %s instead? Enter Y for YES & N for NO:  " %
+                   get_close_matches(w, data.keys())[0])
+        if yn == "Y":
+            return data[get_close_matches(w, data.keys())[0]]
+        elif yn == "N":
+            return "This Entered word in Wrong. Come Back Again"
+        else:
+            return "This is a non-existent word. You need to die now \nJust fucking type 'Y' or 'N'"
     else:
         return "Word is Invalid. Double check and try again..."
 
 
 user_input = input("enter the word: ")
 
-print(dict_translate(user_input))
+# print(dict_translate(user_input))
+output = dict_translate(user_input)
+
+if type(output) == list:
+    for item in output:
+        print(item)
 
 
 #
