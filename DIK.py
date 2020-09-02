@@ -33,7 +33,6 @@ if type(output) == list:
     for item in output:
         print(item)
 
-
 #
 # PowerShell 7.0.3
 # Copyright (c) Microsoft Corporation. All rights reserved.
